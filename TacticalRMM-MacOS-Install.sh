@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Tactical RMM Agent - macOS Only
-# Armut & Pronto Pro Installer
-
 clear
 echo "╔══════════════════════════════════════╗"
 echo "║    Tactical RMM Agent - macOS        ║"
 echo "╚══════════════════════════════════════╝"
 echo ""
 
-# Company selection
 echo "Şirket Seçin / Select Company:"
 echo ""
 echo "  1) Armut"
@@ -41,13 +37,11 @@ while true; do
     esac
 done
 
-# Check if running on macOS
 if [[ "$OSTYPE" != "darwin"* ]]; then
     echo "❌ Bu script sadece macOS için tasarlanmıştır!"
     exit 1
 fi
 
-# Detect Mac architecture
 MAC_ARCH=$(uname -m)
 if [[ "$MAC_ARCH" == "arm64" ]]; then
     AGENT_ARCH="arm64"
@@ -60,7 +54,6 @@ fi
 echo ""
 echo "📦 $COMPANY_NAME için agent indiriliyor..."
 
-# Download agent
 AGENT_FILE="tactical-agent-macos-$AGENT_ARCH"
 DOWNLOAD_URL="https://agents.tacticalrmm.com/api/v2/agents/?version=2.9.1&arch=$AGENT_ARCH&token=e0cb907b-1c72-4f4b-b4ff-83fc4d2b3713&plat=darwin&api=api.trmm.homeruntech.io"
 
@@ -71,14 +64,12 @@ else
     exit 1
 fi
 
-# Make executable
 chmod +x "$AGENT_FILE"
 
 echo ""
 echo "🔧 $COMPANY_NAME için agent kuruluyor..."
 echo "🔑 Admin şifresi gerekebilir..."
 
-# Install agent
 if sudo ./"$AGENT_FILE" -m install \
     --api https://api.trmm.homeruntech.io \
     --client-id $CLIENT_ID \
@@ -104,7 +95,6 @@ else
     exit 1
 fi
 
-# Cleanup
 rm -f "$AGENT_FILE"
 echo ""
 echo "🧹 Geçici dosyalar temizlendi"
