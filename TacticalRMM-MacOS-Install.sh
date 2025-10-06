@@ -53,14 +53,12 @@ read -p "$CHOICE_PROMPT (1-2): " COMPANY_CHOICE
 # Şirket seçimine göre parametreleri ayarla
 case $COMPANY_CHOICE in
     1)
-        # Armut parametreleri
         CLIENT_ID="1"
         SITE_ID="2"
         AUTH_TOKEN="b34762d00cfd286deddf75e085d6ea0364b31eac78ef40471a544b510a0b4fc1"
         COMPANY_NAME="Armut"
         ;;
     2)
-        # Pronto Pro parametreleri
         CLIENT_ID="1"
         SITE_ID="1"
         AUTH_TOKEN="7fcee3d368ec1e1832b92a414690e524415c0784996c2d3479f7fb8dbf925e6e"
@@ -119,16 +117,9 @@ if [ $? -eq 0 ]; then
     echo ""
     echo "$INSTALLING"
     
-    # Çalıştırılabilir yap
     chmod +x "$AGENT_FILE"
     
-    # Agent'ı kur
-    sudo ./"$AGENT_FILE" -m install \
-        --api https://api.trmm.homeruntech.io \
-        --client-id "$CLIENT_ID" \
-        --site-id "$SITE_ID" \
-        --agent-type workstation \
-        --auth "$AUTH_TOKEN"
+    sudo ./"$AGENT_FILE" -m install --api https://api.trmm.homeruntech.io --client-id "$CLIENT_ID" --site-id "$SITE_ID" --agent-type workstation --auth "$AUTH_TOKEN"
     
     if [ $? -eq 0 ]; then
         echo ""
@@ -137,7 +128,6 @@ if [ $? -eq 0 ]; then
         echo "Company: $COMPANY_NAME"
         echo "================================="
         
-        # Temizlik
         rm -f "$AGENT_FILE"
     else
         echo ""
