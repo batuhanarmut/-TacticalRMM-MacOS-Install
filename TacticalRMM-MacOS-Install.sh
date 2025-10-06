@@ -36,8 +36,14 @@ if [[ "$LANGUAGE" == *"English"* ]]; then
     TITLE_INSTALLER="Tactical RMM Installer"
     MSG_DOWNLOADING="Downloading Tactical RMM Agent..."
     MSG_DOWNLOAD_ERROR="❌ Download failed! Check your internet connection."
-    MSG_ARMUT_SUCCESS="🎉 Tactical RMM Agent successfully installed for Armut!"
-    MSG_PRONTO_SUCCESS="🎉 Tactical RMM Agent successfully installed for Pronto Pro!"
+    MSG_ARMUT_SUCCESS="🎉 Tactical RMM Agent successfully installed for Armut!
+
+📍 Site ID: 2
+🏢 Organization: Armut"
+    MSG_PRONTO_SUCCESS="🎉 Tactical RMM Agent successfully installed for Pronto Pro!
+
+📍 Site ID: 1  
+🏢 Organization: Pronto Pro"
     TITLE_SUCCESS="✅ Installation Completed"
     BTN_OK="OK"
 else
@@ -47,8 +53,14 @@ else
     TITLE_INSTALLER="Tactical RMM Installer"
     MSG_DOWNLOADING="Tactical RMM Agent indiriliyor..."
     MSG_DOWNLOAD_ERROR="❌ İndirme başarısız! İnternet bağlantınızı kontrol edin."
-    MSG_ARMUT_SUCCESS="🎉 Armut için Tactical RMM Agent başarıyla kuruldu!"
-    MSG_PRONTO_SUCCESS="🎉 Pronto Pro için Tactical RMM Agent başarıyla kuruldu!"
+    MSG_ARMUT_SUCCESS="🎉 Armut için Tactical RMM Agent başarıyla kuruldu!
+
+📍 Site ID: 2
+🏢 Organization: Armut"
+    MSG_PRONTO_SUCCESS="🎉 Pronto Pro için Tactical RMM Agent başarıyla kuruldu!
+
+📍 Site ID: 1
+🏢 Organization: Pronto Pro"
     TITLE_SUCCESS="✅ Kurulum Tamamlandı"
     BTN_OK="Tamam"
 fi
